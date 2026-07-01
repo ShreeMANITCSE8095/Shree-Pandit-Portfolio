@@ -79,7 +79,7 @@ export const achievementsList = [
     title: 'State Level Karate Player',
     subtitle: 'Brown Belt',
     description:
-      'Represented Gadchiroli at the State level Karate Championsip, Maharasthra and earned secured 3rd Position in Kumite (60 kg Weight Class).',
+      'Represented Gadchiroli at the State level Karate Championsip, Maharasthra and secured 3rd Position in Kumite (60 kg Weight Class).',
   },
   {
     title: 'National Level Chess Player',
