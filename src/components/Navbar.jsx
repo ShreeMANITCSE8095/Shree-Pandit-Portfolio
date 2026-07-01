@@ -11,7 +11,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Achievements', 'Contact'];
   const contactMailto = 'mailto:shreepandit2015@gmail.com';
 
   return (
