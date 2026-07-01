@@ -104,7 +104,7 @@ const Leadership = () => {
             Leadership & Engagement
           </h2>
           <p className="text-white/50 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
-            The cards now alternate left and right around the center line.
+            Coordinating events, leading team operations, and participating in tech summits.
           </p>
         </div>
 
