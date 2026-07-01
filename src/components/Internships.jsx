@@ -56,7 +56,7 @@ const Experience = () => {
             Work Experience
           </h2>
           <p className="text-orange-100 text-base md:text-lg font-semibold max-w-2xl mx-auto">
-            Work experience highlights from NCC and ISTE. Add or edit the detailed resume bullets inside each card.
+            Practical internships where I applied engineering principles and built real-world assets.
           </p>
         </div>
 
