@@ -124,7 +124,7 @@ const Projects = () => {
             Work that speaks <br className="hidden md:block" />for itself
           </h2>
           <p className="text-white/50 text-base md:text-lg max-w-lg font-medium leading-relaxed">
-            Project cards now read directly from `portfolioData.js`, so you can edit content in one place.
+            A selection of projects that showcase my expertise in full-stack development and modern architecture.
           </p>
         </div>
 
