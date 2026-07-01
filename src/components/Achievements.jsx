@@ -13,7 +13,7 @@ const Achievements = () => {
             Achievements
           </h2>
           <p className="text-white/50 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            The key achievements from your resume, shown as quick cards.
+            Recognitions and milestones that reflect my growth as a developer and leader.
           </p>
         </div>
 
