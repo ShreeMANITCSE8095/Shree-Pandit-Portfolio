@@ -28,20 +28,14 @@ const About = () => {
 
         <div data-aos="fade-left" data-aos-delay="200" className="flex-1 text-white mt-8 md:mt-0 relative z-20">
           <h2 className="text-4xl md:text-5xl font-black text-black mb-4">{aboutContent.heading}</h2>
-          <p
-            className="text-lg font-bold mb-10 leading-relaxed max-w-3xl text-red-50"
-            dangerouslySetInnerHTML={{ __html: aboutContent.bio }}
-          />
-
-          <div className="flex flex-wrap gap-3">
-            {aboutContent.techStack.map((item) => (
-              <span
-                key={item}
-                className="px-4 py-2 rounded-full bg-black/15 border border-black/10 text-black font-bold text-sm tracking-wide"
-              >
-                {item}
-              </span>
-            ))}
+            <div className="mb-2 max-w-3xl">
+              {aboutContent.bio.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-lg font-bold mb-6 leading-relaxed text-red-50"
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              ))}
           </div>
         </div>
       </div>
