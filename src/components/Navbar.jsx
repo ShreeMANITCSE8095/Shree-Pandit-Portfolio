@@ -63,20 +63,22 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            
-              key={link}
-              href={link === 'Home' ? '#home' : `#${link.toLowerCase()}`}
-              className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
-            >
-              {link}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            return (
+              <a
+                key={link}
+                href={link === 'Home' ? '#home' : `#${link.toLowerCase()}`}
+                className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
+              >
+                {link}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            );
+          })}
         </div>
 
         <div className="hidden md:block">
-          
+          <a
             href={contactMailto}
             className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md"
           >
@@ -106,18 +108,20 @@ const Navbar = () => {
         }`}
       >
         <div className="flex flex-col px-6 space-y-4">
-          {navLinks.map((link) => (
-            
-              key={link}
-              href={link === 'Home' ? '#home' : `#${link.toLowerCase()}`}
-              onClick={() => setIsOpen(false)}
-              className="text-white hover:text-black font-bold text-lg border-b border-white/20 pb-2 transition-colors"
-            >
-              {link}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            return (
+              <a
+                key={link}
+                href={link === 'Home' ? '#home' : `#${link.toLowerCase()}`}
+                onClick={() => setIsOpen(false)}
+                className="text-white hover:text-black font-bold text-lg border-b border-white/20 pb-2 transition-colors"
+              >
+                {link}
+              </a>
+            );
+          })}
           <div className="pt-4 pb-2">
-            
+            <a
               href={contactMailto}
               onClick={() => setIsOpen(false)}
               className="inline-block px-6 py-3 rounded-full bg-white text-[#ff6b00] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
