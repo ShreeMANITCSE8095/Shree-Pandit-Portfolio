@@ -104,12 +104,12 @@ export const heroContent = {
 
 export const aboutContent = {
   heading: 'Hello!',
-  bio: `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Shree Pandit</span>, I am a Pre-Final Year student persuing B.Tech in Computer Science and Engineering (Class of 2028) at Maulana Azad National Institute of Technology (MANIT), Bhopal, with a deep passion for algorithmic problem-solving and robust system architecture. As an active competitive programmer, I hold a Guardian rank on LeetCode, a 4-Star rating on CodeChef, and a Specialist rank on CodeForces, having solved over 1200+ Data Structures and Algorithms challenges across various platforms.
-  Alongside my academic coursework, I leverage my technical foundation in full-stack web technologies, including the MERN/PERN stacks and PHP/MySQL, to engineer scalable, high-impact applications. My recent technical milestones include architecting a highly secure campus-wide Peer Doubt Solving Platform and co-developing the multi-instance NITBFreshers Study Portal, designed to seamlessly sustain massive traffic spikes of 1000+ concurrent users.
-  Beyond the screen, I serve as a Corporal in the 12 MP BN NCC and act as a Team Management Head at ISTE SC MANIT. Drawing from my experiences as a national-level chess player and state-level karate athlete, I bring strategic foresight, disciplined execution, and strong collaborative leadership to every technical endeavor I undertake.`,
-  techStack: ['C++', 'Python', 'JavaScript', 'React.js', 'Node.js', 'Next.js', 'MongoDB', 'MySQL', 'PostgreSQL'],
+  bio: [
+    `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Shree Pandit</span>, I am a Pre-Final Year student persuing B.Tech in Computer Science and Engineering (Class of 2028) at Maulana Azad National Institute of Technology (MANIT), Bhopal, with a deep passion for algorithmic problem-solving and robust system architecture. As an active competitive programmer, I hold a Guardian rank on LeetCode, a 4-Star rating on CodeChef, and a Specialist rank on CodeForces, having solved over 1200+ Data Structures and Algorithms challenges across various platforms.`,
+    `Alongside my academic coursework, I leverage my technical foundation in full-stack web technologies, including the MERN/PERN stacks and PHP/MySQL, to engineer scalable, high-impact applications. My recent technical milestones include architecting a highly secure campus-wide Peer Doubt Solving Platform and co-developing the multi-instance NITBFreshers Study Portal, designed to seamlessly sustain massive traffic spikes of 1000+ concurrent users.`,
+    `Beyond the screen, I serve as a Corporal in the 12 MP BN NCC and act as a Team Management Head at ISTE SC MANIT. Drawing from my experiences as a national-level chess player and state-level karate athlete, I bring strategic foresight, disciplined execution, and strong collaborative leadership to every technical endeavor I undertake.`,
+  ],
 };
-
 export const skillsContent = {
   badge: 'My Process',
   heading: "Here's how I turn ideas into real-world applications",
