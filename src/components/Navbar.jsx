@@ -1,16 +1,50 @@
 import React, { useState, useEffect } from 'react';
 import { personalInfo } from '../data/portfolioData';
 
+const sectionThemes = {
+  home: 'black',
+  about: 'orange',
+  process: 'white',
+  skills: 'black',
+  projects: 'black',
+  experience: 'orange',
+  achievements: 'black',
+  'coding-profiles': 'black',
+  contact: 'black',
+};
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeBg, setActiveBg] = useState('black');
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+
+      const sections = Object.keys(sectionThemes);
+      let current = 'home';
+      for (const id of sections) {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom > 100) {
+            current = id;
+            break;
+          }
+        }
+      }
+      setActiveBg(sectionThemes[current] || 'black');
+    };
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const logoTextColor =
+    activeBg === 'white' ? 'text-black' : 'text-white';
+  const logoDotColor =
+    activeBg === 'orange' ? 'text-black' : 'text-orange-400';
   const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Achievements', 'Contact'];
   const contactMailto = 'mailto:shreepandit2015@gmail.com';
 
