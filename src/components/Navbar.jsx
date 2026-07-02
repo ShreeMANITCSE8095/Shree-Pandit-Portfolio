@@ -42,9 +42,10 @@ const Navbar = () => {
   }, []);
 
   const logoTextColor =
-    activeBg === 'white' ? 'text-black' : 'text-white';
+    isOpen ? 'text-white' : activeBg === 'white' ? 'text-black' : 'text-white';
   const logoDotColor =
-    activeBg === 'orange' ? 'text-black' : 'text-orange-400';
+    isOpen ? 'text-black' : activeBg === 'orange' ? 'text-black' : 'text-orange-400';
+
   const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Achievements', 'Contact'];
   const contactMailto = 'mailto:shreepandit2015@gmail.com';
 
@@ -56,14 +57,14 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#home" className="text-white text-2xl font-black tracking-tight whitespace-nowrap">
-            {personalInfo.brandName}<span className="text-orange-400">.</span>
+          <a href="#home" className={`${logoTextColor} text-2xl font-black tracking-tight whitespace-nowrap transition-colors duration-300`}>
+            {personalInfo.brandName}<span className={`${logoDotColor} transition-colors duration-300`}>.</span>
           </a>
         </div>
 
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <a
+            
               key={link}
               href={link === 'Home' ? '#home' : `#${link.toLowerCase()}`}
               className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
@@ -75,7 +76,7 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:block">
-          <a
+          
             href={contactMailto}
             className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md"
           >
@@ -106,7 +107,7 @@ const Navbar = () => {
       >
         <div className="flex flex-col px-6 space-y-4">
           {navLinks.map((link) => (
-            <a
+            
               key={link}
               href={link === 'Home' ? '#home' : `#${link.toLowerCase()}`}
               onClick={() => setIsOpen(false)}
@@ -116,7 +117,7 @@ const Navbar = () => {
             </a>
           ))}
           <div className="pt-4 pb-2">
-            <a
+            
               href={contactMailto}
               onClick={() => setIsOpen(false)}
               className="inline-block px-6 py-3 rounded-full bg-white text-[#ff6b00] font-black hover:bg-black hover:text-white transition-colors w-full text-center shadow-lg"
