@@ -41,17 +41,32 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const logoTextColor =
-    isOpen ? 'text-white' : activeBg === 'white' ? 'text-black' : 'text-white';
-  const logoDotColor =
-    isOpen ? 'text-black' : activeBg === 'orange' ? 'text-black' : 'text-orange-400';
+  const isWhitePage = !isOpen && activeBg === 'white';
+  const isOrangePage = !isOpen && activeBg === 'orange';
 
-  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Achievements', 'Contact'];
+  const logoTextColor = isOpen ? 'text-white' : isWhitePage ? 'text-black' : 'text-white';
+  const logoDotColor = isOpen ? 'text-black' : isOrangePage ? 'text-black' : 'text-orange-400';
+
+  const linkTextColor = isOpen
+    ? 'text-white/80 hover:text-white'
+    : isWhitePage
+    ? 'text-black/70 hover:text-black'
+    : 'text-white/80 hover:text-white';
+
+  const contactBtnColor = isOpen
+    ? 'bg-white/10 border-white/20 text-white hover:bg-white/20'
+    : isWhitePage
+    ? 'bg-black/5 border-black/20 text-black hover:bg-black/10'
+    : 'bg-white/10 border-white/20 text-white hover:bg-white/20';
+
+  const menuIconColor = isWhitePage ? 'text-black' : 'text-white';
+
+  const navLinks = ['Home', 'About', 'Skills', 'Projects', 'Experience', 'Achievements'];
   const contactMailto = 'mailto:shreepandit2015@gmail.com';
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 border-b border-black/10 transition-all duration-300 ${
         isOpen ? 'bg-[#ff6b00] py-4' : isScrolled ? 'bg-transparent py-4' : 'bg-transparent py-6'
       }`}
     >
@@ -68,7 +83,7 @@ const Navbar = () => {
               <a
                 key={link}
                 href={link === 'Home' ? '#home' : `#${link.toLowerCase()}`}
-                className="text-white/80 hover:text-white font-medium relative group transition-colors duration-300"
+                className={`${linkTextColor} font-medium relative group transition-colors duration-300`}
               >
                 {link}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
@@ -80,7 +95,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <a
             href={contactMailto}
-            className="px-6 py-2.5 rounded-full bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)] transition-all duration-300 backdrop-blur-md"
+            className={`px-6 py-2.5 rounded-full border font-semibold transition-all duration-300 backdrop-blur-md ${contactBtnColor}`}
           >
             Contact Me
           </a>
@@ -89,7 +104,7 @@ const Navbar = () => {
         <div className="md:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-white focus:outline-none p-2"
+            className={`${menuIconColor} focus:outline-none p-2 transition-colors duration-300`}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
