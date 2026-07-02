@@ -96,9 +96,9 @@ export const heroContent = {
     'I build scalable products using Modern Web Technologies and love solving problems with C++, Python.',
   ctaPrimary: { text: 'View My Work', href: '#projects' },
   ctaSecondary: {
-    text: 'Contact Me',
-    href: 'mailto:shreepandit2015@gmail.com',
-  },
+  text: 'Contact Me',
+  href: '#contact',
+},
   ctaResume: { text: 'Download Resume', href: '/Shree_Resume_Offcampus.pdf' },
 };
 
