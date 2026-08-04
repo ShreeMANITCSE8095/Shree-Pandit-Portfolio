@@ -33,9 +33,9 @@ export const codingProfiles = [
   {
     platform: 'LeetCode',
     username: 'ShreePandit',
-    rating: '2167',
+    rating: '2170',
     badge: 'Guardian',
-    totalQuestions: '873',
+    totalQuestions: '969',
     url: socialLinks.leetcode,
   },
   {
@@ -43,15 +43,15 @@ export const codingProfiles = [
     username: 'shree_pandit',
     rating: '1815',
     badge: '4 Star',
-    totalQuestions: '208',
+    totalQuestions: '230',
     url: socialLinks.codechef,
   },
   {
     platform: 'Codeforces',
     username: 'ShreePandit',
-    rating: '1550',
-    badge: 'Specialist',
-    totalQuestions: '184',
+    rating: '1610',
+    badge: 'Expert',
+    totalQuestions: '194',
     url: socialLinks.codeforces,
   },
 ];
@@ -105,7 +105,7 @@ export const heroContent = {
 export const aboutContent = {
   heading: 'Hello!',
   bio: [
-    `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Shree Pandit</span>, I am a Pre-Final Year student persuing B.Tech in Computer Science and Engineering (Class of 2028) at Maulana Azad National Institute of Technology (MANIT), Bhopal, with a deep passion for algorithmic problem-solving and robust system architecture. As an active competitive programmer, I hold a Guardian rank on LeetCode, a 4-Star rating on CodeChef, and a Specialist rank on CodeForces, having solved over 1200+ Data Structures and Algorithms challenges across various platforms.`,
+    `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Shree Pandit</span>, I am a Pre-Final Year student persuing B.Tech in Computer Science and Engineering (Class of 2028) at Maulana Azad National Institute of Technology (MANIT), Bhopal, with a deep passion for algorithmic problem-solving and robust system architecture. As an active competitive programmer, I hold a Guardian rank on LeetCode, a 4-Star rating on CodeChef, and Expert rank on CodeForces, having solved over 1400+ Data Structures and Algorithms challenges across various platforms.`,
     `My technical foundation spans robust system architecture and modern full-stack development, enabling me to engineer complex, performance-critical solutions. I recently built the DPI Engine, a multi-threaded C++17 network analysis tool with a full-stack web interface, and OmniSync, a secure browser extension that automates retroactive code synchronization to GitHub via a stateless serverless architecture. Building on my experience developing the campus-wide NITBFreshers Study Portal to support 1,000+ concurrent users, I consistently focus on optimizing backend performance, securing authentication flows, and deploying scalable applications.`,
     `Beyond the screen, I serve as a Corporal in the 12 MP BN NCC and act as a Team Management Head at ISTE SC MANIT. Drawing from my experiences as a national-level chess player and state-level karate athlete, I bring strategic foresight, disciplined execution, and strong collaborative leadership to every technical endeavor I undertake.`,
   ],
