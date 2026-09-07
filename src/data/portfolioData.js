@@ -16,7 +16,7 @@ export const personalInfo = {
   },
   summary:
     'Full Stack Web Developer, System Programmer and Competitive Programmer focused on C++, C, Python, JavaScript, React.js, Node.js.',
-  resumeUrl: '/Shree_Resume_Offcampus.pdf',
+  resumeUrl: '/Shree_Pandit_Resume.pdf',
 };
 
 export const socialLinks = {
@@ -35,7 +35,7 @@ export const codingProfiles = [
     username: 'ShreePandit',
     rating: '2170',
     badge: 'Guardian',
-    totalQuestions: '969',
+    totalQuestions: '1042',
     url: socialLinks.leetcode,
   },
   {
@@ -43,7 +43,7 @@ export const codingProfiles = [
     username: 'shree_pandit',
     rating: '1815',
     badge: '4 Star',
-    totalQuestions: '230',
+    totalQuestions: '239',
     url: socialLinks.codechef,
   },
   {
@@ -51,7 +51,7 @@ export const codingProfiles = [
     username: 'ShreePandit',
     rating: '1610',
     badge: 'Expert',
-    totalQuestions: '194',
+    totalQuestions: '198',
     url: socialLinks.codeforces,
   },
 ];
@@ -99,7 +99,7 @@ export const heroContent = {
   text: 'Contact Me',
   href: '#contact',
 },
-  ctaResume: { text: 'Download Resume', href: '/Shree_Resume_Offcampus.pdf' },
+  ctaResume: { text: 'Download Resume', href: '/Shree_Pandit_Resume.pdf' },
 };
 
 export const aboutContent = {
