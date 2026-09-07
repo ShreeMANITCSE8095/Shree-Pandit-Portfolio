@@ -1,6 +1,9 @@
+import argusImage from '../assets/projects/argus.jpeg';
 import dpiEngineImage from '../assets/projects/dpi_engine.jpeg';
-import omniSyncImage from '../assets/projects/omnisync.jpeg';
+import auralisImage from '../assets/projects/auralis.jpeg';
 import freshersPortalImage from '../assets/projects/freshers_portal.jpeg';
+import omniSyncImage from '../assets/projects/omnisync.jpeg';
+import huffmanImage from '../assets/projects/huffman.jpeg';
 import peerDoubtImage from '../assets/projects/peer_doubt.png';
 
 export const personalInfo = {
@@ -105,7 +108,7 @@ export const heroContent = {
 export const aboutContent = {
   heading: 'Hello!',
   bio: [
-    `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Shree Pandit</span>, I am a Pre-Final Year student persuing B.Tech in Computer Science and Engineering (Class of 2028) at Maulana Azad National Institute of Technology (MANIT), Bhopal, with a deep passion for algorithmic problem-solving and robust system architecture. As an active competitive programmer, I hold a Guardian rank on LeetCode, a 4-Star rating on CodeChef, and Expert rank on CodeForces, having solved over 1400+ Data Structures and Algorithms challenges across various platforms.`,
+    `Hi, my name is <span class="text-black text-xl font-black mx-1 tracking-wide uppercase">Shree Pandit</span>, I am a Pre-Final Year student persuing B.Tech in Computer Science and Engineering (Class of 2028) at Maulana Azad National Institute of Technology (MANIT), Bhopal, with a deep passion for algorithmic problem-solving and robust system architecture. As an active competitive programmer, I hold a Guardian rank on LeetCode, a 4-Star rating on CodeChef, and Expert rank on CodeForces, having solved over 1500+ Data Structures and Algorithms challenges across various platforms.`,
     `My technical foundation spans robust system architecture and modern full-stack development, enabling me to engineer complex, performance-critical solutions. I recently built the DPI Engine, a multi-threaded C++17 network analysis tool with a full-stack web interface, and OmniSync, a secure browser extension that automates retroactive code synchronization to GitHub via a stateless serverless architecture. Building on my experience developing the campus-wide NITBFreshers Study Portal to support 1,000+ concurrent users, I consistently focus on optimizing backend performance, securing authentication flows, and deploying scalable applications.`,
     `Beyond the screen, I serve as a Corporal in the 12 MP BN NCC and act as a Team Management Head at ISTE SC MANIT. Drawing from my experiences as a national-level chess player and state-level karate athlete, I bring strategic foresight, disciplined execution, and strong collaborative leadership to every technical endeavor I undertake.`,
   ],
@@ -231,8 +234,28 @@ export const leadershipList = [
 
 export const projects = [
   {
-    id: 'dpi-engine',
+    id: 'argus',
     number: '01',
+    title: 'A.R.G.U.S',
+    image: argusImage,
+    description:
+      'AI-driven passive network threat detection pipeline for unidirectional (data-diode) monitoring, built for Smart India Hackathon 2026 (PS 26145).',
+    techStack: ['C++17', 'ZeroMQ', 'Python', 'XGBoost', 'FastAPI', 'React.js'],
+    points: [
+      'Engineered a C++17 passive DPI engine for a data-diode threat-detection pipeline, extracting 5-tuple flows, TLS JA3 fingerprints, DNS query entropy, and host fan-out/inter-arrival stats, streaming per-flow features over ZeroMQ PUB/SUB.',
+      'Designed the flow-feature schema covering all 6 target threat classes (DDoS, port scan, C2 beaconing, DGA/tunneling, encrypted malware, exfiltration), enabling XGBoost classifiers to hit ~94% F1 (DDoS) and ~96% F1 (port scan) at under 5ms/flow inference.',
+      'Hardened the engine for release by fixing an unaligned-pointer UB bug in packet parsing and a variance-calculation bug in host profiling, and rebinding both ZeroMQ sockets to localhost-only for security.',
+      'Built RuleManager, a fully implemented IP/app/domain/port blocking layer, deliberately kept out of the live pipeline to match the hackathon problem statement\'s passive-monitoring-only scope.',
+    ],
+    links: {
+      github: 'https://github.com/ShreeMANITCSE8095/A.R.G.U.S',
+      demo: 'https://argus-sih.vercel.app/',
+    },
+    isFlagship: true,
+  },
+  {
+    id: 'dpi-engine',
+    number: '02',
     title: 'DPI Engine',
     image: dpiEngineImage,
     description:
@@ -251,8 +274,48 @@ export const projects = [
     isFlagship: true,
   },
   {
+    id: 'auralis',
+    number: '03',
+    title: 'Auralis Network Analyser',
+    image: auralisImage,
+    description:
+      'Real-time network traffic diagnostic instrument built with a decoupled C++/Python/React pipeline for zero-latency flow monitoring.',
+    techStack: ['C++20', 'libpcap', 'Python', 'FastAPI', 'React.js'],
+    points: [
+      'Architected a real-time network diagnostic tool decoupled into a C++ capture engine, Python/FastAPI aggregation service, and React dashboard, applying strict YAGNI principles for zero-latency processing.',
+      'Built a single-threaded C++ capture engine on libpcap/Npcap to parse Ethernet/IPv4/TCP/UDP headers and extract 5-tuple flow signatures, streaming structured JSON over a local TCP IPC bridge.',
+      'Engineered an asynchronous FastAPI aggregation layer computing per-second bandwidth, packet rates, and protocol distribution via 1-second tumbling windows, holding flow state in a 300-second in-memory ring buffer with zero disk I/O.',
+      'Deployed a React/Tailwind instrument-styled dashboard with an SVG oscilloscope bandwidth trace and live WebSocket-driven patch-panel visualization, running the backend natively via systemd on a Linux VPS and the frontend on Vercel.',
+    ],
+    links: {
+      github: 'https://github.com/ShreeMANITCSE8095/Auralis-Network-Analyser',
+      demo: '',
+    },
+    isFlagship: false,
+  },
+  {
+    id: 'freshers-portal',
+    number: '04',
+    title: 'NITBFreshers Study Portal',
+    image: freshersPortalImage,
+    description:
+      'Full-stack scalable academic resource management system for MANIT students.',
+    techStack: ['JavaScript', 'Tailwind CSS', 'PHP', 'MySQL'],
+    points: [
+      'Supported 1000+ concurrent users (adopted by ~95% of fresher batch) via a multi-instance PHP/MySQL architecture',
+      'Secured user authentication and eliminated SQL injection vulnerabilities by using prepared statements and 64-char HttpOnly tokens.',
+      'Cut material browsing load time by 40% (measured via Lighthouse) for 1000+ concurrent users by replacing synchronous page reloads with asynchronous Fetch API calls, while enforcing PDF.js-based anti-scraping controls on all resources.',
+      'Shipped a PYQs Collection module and an App Download page as new platform features, and authored the accompanying LaTeX documentation (Overleaf, v1.2) covering all 14 database tables for future maintainers.',
+    ],
+    links: {
+      github: 'https://github.com/ShreeMANITCSE8095/NITBFreshers-Study-Portal',
+      demo: 'https://nitbfreshers.42web.io/',
+    },
+    isFlagship: false,
+  },
+  {
     id: 'omnisync',
-    number: '02',
+    number: '05',
     title: 'OmniSync',
     image: omniSyncImage,
     description:
@@ -271,35 +334,38 @@ export const projects = [
     isFlagship: false,
   },
   {
-    id: 'freshers-portal',
-    number: '03',
-    title: 'NITBFreshers Study Portal',
-    image: freshersPortalImage,
+    id: 'huffman-compressor',
+    number: '06',
+    title: 'Huffman File Compressor',
+    image: huffmanImage,
     description:
-      'Full-stack scalable academic resource management system for MANIT students.',
-    techStack: ['JavaScript', 'Tailwind CSS', 'PHP', 'MySQL'],
+      'C++ Huffman-encoding CLI extended into a full-stack web app for lossless text file compression and decompression.',
+    techStack: ['C++', 'Node.js', 'Express.js', 'HTML/CSS/JS'],
     points: [
-      'Supported 1000+ concurrent users (adopted by ~95% of fresher batch) via a multi-instance PHP/MySQL architecture',
-      'Secured user authentication and eliminated SQL injection vulnerabilities by using prepared statements and 64-char HttpOnly tokens.',
-      'Cut material browsing load time by 40% (measured via Lighthouse) for 1000+ concurrent users by replacing synchronous page reloads with asynchronous Fetch API calls, while enforcing PDF.js-based anti-scraping controls on all resources.',
+      'Built a C++ Huffman encoding/decoding CLI (`nca`) implementing a priority-queue-based Huffman Tree, frequency table generation, and a custom .nca binary file format for lossless text compression.',
+      'Fixed four critical C++ bugs — empty-file and single-character segfaults, incorrect exit codes, and missing header includes — to harden the core compression engine.',
+      'Extended the CLI into a full web app by building a dependency-free Node.js/Express backend exposing the compression logic via a CORS-enabled REST API, paired with a plain HTML/JS/CSS frontend.',
+      'Deployed the backend on Render and frontend on Vercel, resolving cross-origin CORS trailing-slash and double-slash fetch URL bugs to get the compress/decompress flow working end-to-end in production.',
     ],
     links: {
-      github: 'https://github.com/ShreeMANITCSE8095/NITBFreshers-Study-Portal',
-      demo: 'https://nitbfreshers.42web.io/',
+      github: 'https://github.com/ShreeMANITCSE8095/File-Compressor-Huffman',
+      demo: '',
     },
     isFlagship: false,
   },
   {
     id: 'peer-learning-platform',
-    number: '04',
+    number: '07',
     title: 'Peer Learning Platform',
     image: peerDoubtImage,
     description:
       'Centralized StackOverflow-style peer learning platform for MANIT Bhopal to streamline doubt resolution and build a persistent, searchable knowledge base.',
     techStack: ['React.js', 'Node.js', 'Express.js', 'PostgreSQL', 'Tailwind CSS'],
     points: [
-      'Integrated rich-text/code-block editor and PostgreSQL Full-Text Search with duplicate-question detection.',
-      'Enforced institutional access using @stu.manit.ac.in verification and secure JWT-based authentication & implemented a dynamic reputation engine with voting, accepted answer pinning, and contributor leaderboards.',
+      'Built a Node.js/Express + PostgreSQL (Prisma ORM) Q&A backend for MANIT students, modeling questions, threaded/nested answers (self-referencing replies), tags, votes, and bookmarks with cursor-based pagination for the question feed.',
+      "Integrated authentication directly against MANIT's ERP system (erpapi.manit.ac.in) — verifying scholar number + password on first login, auto-provisioning the user profile (name, department, batch year, photo) from official student records, then issuing JWTs for subsequent sessions.",
+      'Implemented a toggleable up/down voting system (one vote per user per question or answer, computed as a net score) and a bookmarks feature for saving questions, both enforced via unique database constraints.',
+      'Built the ask/answer flow with a Markdown + code-block editor (react-md-editor) on the client for both questions and answers, organized with subject tags (DSA, OS, DBMS, Networks, etc.) via a many-to-many tag join table.',
     ],
     links: {
       github: 'https://github.com/ShreeMANITCSE8095/peer-doubt-platform',
